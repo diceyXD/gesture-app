@@ -2,12 +2,19 @@ import streamlit as st
 import numpy as np
 import cv2
 from tensorflow.keras.models import load_model
+@st.cache_resource
+def load_my_model():
+    return load_model("gesture_model.h5", compile=False)
+
+model = load_my_model()
+
+
 from PIL import Image
 
 # Load model
 model = load_model("gesture_model.h5")
 
-# 🔴 REPLACE with your printed class_names from Colab
+
 labels = [
     "palm","l","fist","fist_moved","thumb",
     "index","ok","palm_moved","c","down"
