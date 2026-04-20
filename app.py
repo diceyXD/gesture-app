@@ -34,4 +34,4 @@ if uploaded_file:
     confidence = np.max(pred)
 
     st.success(f"Prediction: {labels[class_id]}")
-    st.info(f"Confidence: {confidence:.2f}")
+#    st.info(f"Confidence: {confidence:.2f}")
